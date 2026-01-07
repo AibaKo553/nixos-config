@@ -7,6 +7,5 @@
     ./librewolf.nix
     ./chromium.nix
     ./vscode.nix
-    ./obs.nix
   ];
 }

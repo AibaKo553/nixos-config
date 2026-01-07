@@ -12,11 +12,12 @@
     chromium
     telegram-desktop
     gimp
+    obs-studio
+    droidcam
     kdePackages.kdenlive
     discord
     qbittorrent
     winbox4
-    clipgrab
     vlc
     libreoffice-qt
     hunspell
