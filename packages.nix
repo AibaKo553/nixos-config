@@ -11,7 +11,6 @@
     # Desktop apps
     chromium
     telegram-desktop
-    obs-studio
     gimp
     kdePackages.kdenlive
     discord
