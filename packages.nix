@@ -3,8 +3,10 @@
 { pkgs, ... }:
 
 {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [ "qtwebengine-5.15.19" ];
+  };
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
@@ -18,6 +20,7 @@
     discord
     qbittorrent
     winbox4
+    clipgrab
     vlc
     libreoffice-qt
     hunspell
