@@ -47,4 +47,7 @@
   fonts.packages = with pkgs; [
     times-newer-roman
   ];
+
+  # Add KDE Connect.
+  programs.kdeconnect.enable = true;
 }
