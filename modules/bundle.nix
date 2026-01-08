@@ -7,5 +7,6 @@
     ./librewolf.nix
     ./chromium.nix
     ./vscode.nix
+    ./steam.nix
   ];
 }
