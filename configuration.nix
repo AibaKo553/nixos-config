@@ -83,7 +83,12 @@
     isNormalUser = true;
     description = "aiba";
     home = "/home/aiba";
-    extraGroups = [ "networkmanager" "wheel" "docker" "vboxusers" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "docker" 
+      # "vboxusers" 
+    ];
     packages = with pkgs; [];
   };
 
@@ -94,8 +99,8 @@
   virtualisation.docker.enable = true;
 
   # VirtualBox Oracle Extensions.
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
 
   # Enable the Flatpak.
   services.flatpak.enable = true;
