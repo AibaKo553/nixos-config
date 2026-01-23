@@ -17,11 +17,12 @@
     discord
     winbox4
     video-downloader
-    vlc
+    mpv
     prismlauncher
     libreoffice-qt
     hunspell
     hunspellDicts.ru_RU
+    alacritty
 
     # KDE
     kdePackages.kdenlive
