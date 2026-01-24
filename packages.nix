@@ -22,10 +22,10 @@
     hunspell
     hunspellDicts.ru_RU
     alacritty
+    qbittorrent
 
     # KDE
     kdePackages.kdenlive
-    kdePackages.ktorrent
     kdePackages.dragon
 
     # CLI utils
