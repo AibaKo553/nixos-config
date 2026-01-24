@@ -17,7 +17,6 @@
     discord
     winbox4
     video-downloader
-    mpv
     prismlauncher
     libreoffice-qt
     hunspell
@@ -27,6 +26,7 @@
     # KDE
     kdePackages.kdenlive
     kdePackages.ktorrent
+    kdePackages.dragon
 
     # CLI utils
     fastfetch
