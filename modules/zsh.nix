@@ -6,7 +6,6 @@
     enableCompletion = true;
     histSize = 10000;
     shellAliases = {
-      flatpak-update = "flatpak update -y";
       update = "sudo nixos-rebuild switch --upgrade && flatpak update -y";
       nixos-clear = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot";
       open = "xdg-open";
