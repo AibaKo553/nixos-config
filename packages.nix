@@ -8,44 +8,44 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
-    # Desktop apps
-    chromium
-    telegram-desktop
-    gimp
-    obs-studio
-    droidcam
-    discord
-    winbox4
-    video-downloader
-    prismlauncher
-    libreoffice-qt
-    hunspell
-    hunspellDicts.ru_RU
-    alacritty
-    qbittorrent
+    # # Desktop apps
+    # chromium
+    # telegram-desktop
+    # gimp
+    # obs-studio
+    # droidcam
+    # discord
+    # winbox4
+    # video-downloader
+    # prismlauncher
+    # libreoffice-qt
+    # hunspell
+    # hunspellDicts.ru_RU
+    # alacritty
+    # qbittorrent
 
-    # KDE
-    kdePackages.kdenlive
-    kdePackages.dragon
+    # # KDE
+    # kdePackages.kdenlive
+    # kdePackages.dragon
 
-    # CLI utils
-    fastfetch
-    wget
-    tree
-    htop
-    mcrcon
-    docker-compose
+    # # CLI utils
+    # fastfetch
+    # wget
+    # tree
+    # htop
+    # mcrcon
+    # docker-compose
 
-    # Language runtimes & toolchains
-    python314
-    virtualenv
-    jdk8
-    jdk
+    # # Language runtimes & toolchains
+    # python314
+    # virtualenv
+    # jdk8
+    # jdk
 
-    # Code editor
-    jetbrains.pycharm-oss
-    jetbrains.idea-oss
-    vscode.fhs
+    # # Code editor
+    # jetbrains.pycharm-oss
+    # jetbrains.idea-oss
+    # vscode.fhs
   ];
   
   # List fonts.
