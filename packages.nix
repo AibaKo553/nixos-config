@@ -23,6 +23,7 @@
     # hunspellDicts.ru_RU
     # alacritty
     # qbittorrent
+    # cpu-x
 
     # # KDE
     # kdePackages.kdenlive
