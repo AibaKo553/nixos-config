@@ -40,7 +40,6 @@
     # # Language runtimes & toolchains
     # python314
     # virtualenv
-    # jdk8
     # jdk
 
     # # Code editor
