@@ -24,10 +24,10 @@
     # alacritty
     # qbittorrent
     # cpu-x
+    # mpv
 
     # # KDE
     # kdePackages.kdenlive
-    # kdePackages.dragon
 
     # # CLI utils
     # fastfetch
