@@ -7,6 +7,7 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./modules/bundle.nix
+    # ./home.nix
   ];
 
   # Bootloader.
