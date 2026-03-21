@@ -9,39 +9,39 @@
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     # Desktop apps
-    chromium
-    telegram-desktop
-    gimp
-    obs-studio
-    droidcam
-    discord
-    winbox4
-    video-downloader
-    libreoffice-qt
-    hunspell
-    hunspellDicts.ru_RU
-    qbittorrent
-    cpu-x
-    mpv
-    prismlauncher
+    # chromium
+    # telegram-desktop
+    # gimp
+    # obs-studio
+    # droidcam
+    # discord
+    # winbox4
+    # video-downloader
+    # libreoffice-qt
+    # hunspell
+    # hunspellDicts.ru_RU
+    # qbittorrent
+    # cpu-x
+    # mpv
+    # prismlauncher
 
     # KDE
-    kdePackages.kdenlive
+    # kdePackages.kdenlive
 
     # CLI utils
-    fastfetch
-    wget
-    tree
-    htop
-    mcrcon
-    docker-compose
+    # fastfetch
+    # wget
+    # tree
+    # htop
+    # mcrcon
+    # docker-compose
 
     # Language runtimes & toolchains
     # python314
     # virtualenv
     # jdk
 
-    # # Code editor
+    # Code editor
     # jetbrains.pycharm-oss
     # jetbrains.idea-oss
     # vscode.fhs
