@@ -7,7 +7,6 @@
 
   environment.systemPackages = with pkgs; [
     # Desktop apps
-    chromium
     vlc
 
     # KDE
