@@ -3,5 +3,7 @@
 {
   imports = [
     ./alacritty.nix
+    ./obs-studio.nix
+    ./fastfetch.nix
   ];
 }

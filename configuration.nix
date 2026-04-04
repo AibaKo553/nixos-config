@@ -7,40 +7,22 @@
     ./hardware-configuration.nix
     ./packages.nix
     ./modules/bundle.nix
-    # ./home.nix
   ];
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = [ "amdgpu" "v4l2loopback" ];
+  boot.blacklistedKernelModules = [ "kvm_amd" "kvm" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
-  # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # AMD driver
-  # hardware = {
-  #   graphics = {
-  #       enable = true;
-  #       enable32Bit = true;
-  #   };
-
-  #   amdgpu.amdvlk = {
-  #       enable = true;
-  #       support32Bit.enable = true;
-  #   };
-  # };
-
-  networking.hostName = "nixos"; # Define your hostname.
-
-  # Enable networking
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Set your time zone.
   time.timeZone = "Asia/Bishkek";
 
-  # Select internationalisation properties.
   i18n.defaultLocale = "ru_RU.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -54,28 +36,35 @@
     LC_TELEPHONE = "ky_KG";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
+  services.displayManager.sddm = {
+    enable = true;
+    settings = {
+      Theme = {
+        Current = "breeze";
+        ThemeDir = "/etc/nixos/theme";
+      };
+    };
+  };
+
   # KDE Exclusions.
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.konsole
   ];
 
-  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us,ru";
     options = "grp:caps_toggle";
   };
 
-  # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
-  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -85,31 +74,20 @@
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aiba = {
     isNormalUser = true;
     description = "aiba";
     home = "/home/aiba";
-    extraGroups = [ 
-      "networkmanager" 
-      "wheel" 
-      "docker" 
-      # "vboxusers" 
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
     ];
     packages = with pkgs; [];
   };
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Enable the Docker daemon.
   virtualisation.docker.enable = true;
 
-  # VirtualBox Oracle Extensions.
-  # virtualisation.virtualbox.host.enable = true;
-  # virtualisation.virtualbox.host.enableExtensionPack = true;
-
-  # Enable the Flatpak.
   services.flatpak.enable = true;
   systemd.services.flatpak-repo = {
     wantedBy = [ "multi-user.target" ];
@@ -119,6 +97,11 @@
     '';
   };
 
-  # Version NixOS
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   system.stateVersion = "25.11";
 }

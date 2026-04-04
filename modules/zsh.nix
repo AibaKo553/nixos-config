@@ -6,9 +6,7 @@
     enableCompletion = true;
     histSize = 10000;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --upgrade && flatpak update -y";
-      nixos-clear = "sudo nix-collect-garbage -d && sudo nixos-rebuild boot";
-      open = "xdg-open";
+
     };
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
@@ -20,7 +18,5 @@
     ];
   };
 
-  # Prevent the new user dialog in zsh
-  system.userActivationScripts.zshrc = "touch .zshrc";
   users.defaultUserShell = pkgs.zsh;
 }

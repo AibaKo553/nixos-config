@@ -3,55 +3,59 @@
 { pkgs, ... }:
 
 {
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
     # Desktop apps
-    # chromium
-    # telegram-desktop
-    # gimp
-    # obs-studio
-    # droidcam
-    # discord
-    # winbox4
-    # video-downloader
-    # libreoffice-qt
-    # hunspell
-    # hunspellDicts.ru_RU
-    # qbittorrent
-    # cpu-x
-    # mpv
-    # prismlauncher
+    chromium
+    telegram-desktop
+    gimp
+    discord
+    winbox4
+    media-downloader
+    libreoffice-qt
+    hunspell
+    hunspellDicts.ru_RU
+    qbittorrent
+    cpu-x
+    vlc
+    droidcam
+    mangohud
+    element-desktop
+    prismlauncher
 
     # KDE
-    # kdePackages.kdenlive
+    kdePackages.kdenlive
 
     # CLI utils
-    # fastfetch
-    # wget
-    # tree
-    # htop
-    # mcrcon
-    # docker-compose
+    wget
+    tree
+    htop
+    mcrcon
+    docker-compose
+    mc
 
     # Language runtimes & toolchains
+    javaPackages.compiler.temurin-bin.jdk-21
     # python314
     # virtualenv
     # jdk
 
-    # Code editor
+    # # Code editor
     # jetbrains.pycharm-oss
     # jetbrains.idea-oss
     # vscode.fhs
   ];
   
-  # List fonts.
   fonts.packages = with pkgs; [
     times-newer-roman
   ];
 
-  # Add KDE Connect.
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "aiba" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.guest.dragAndDrop = true;
+
   programs.kdeconnect.enable = true;
 }

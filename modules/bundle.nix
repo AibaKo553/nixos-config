@@ -6,7 +6,7 @@
     ./zsh.nix
     ./librewolf.nix
     ./chromium.nix
-    ./vscode.nix
+#     ./vscode.nix
     ./steam.nix
   ];
 }
