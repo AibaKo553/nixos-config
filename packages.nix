@@ -36,7 +36,6 @@
     mc
 
     # Language runtimes & toolchains
-    javaPackages.compiler.temurin-bin.jdk-21
     # python314
     # virtualenv
     # jdk
