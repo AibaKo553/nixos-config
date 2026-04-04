@@ -12,7 +12,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.kernelModules = [ "amdgpu" "v4l2loopback" ];
-  boot.blacklistedKernelModules = [ "kvm_amd" "kvm" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
