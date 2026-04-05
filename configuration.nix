@@ -11,8 +11,7 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.kernelModules = [ "amdgpu" "v4l2loopback" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
